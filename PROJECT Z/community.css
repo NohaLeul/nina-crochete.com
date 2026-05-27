@@ -1,0 +1,137 @@
+/* General body and font settings */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-image: url('crochet-bg.jpg'); /* subtle crochet pattern */
+  background-size: cover;
+  background-attachment: fixed;
+  color: #333;
+  line-height: 1.7;
+}
+
+/* Container for sections */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  margin-bottom: 50px;
+}
+
+/* Header */
+#links {
+    margin: 40px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    margin: 10px;
+    background-color: #fae3d9;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ffb6b9;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+header {
+  background: linear-gradient(to right, #ff7a7a, #ffb347);
+  color: white;
+  text-align: center;
+  padding: 30px 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;}
+
+header p {
+    margin: 5px 0 0 0;
+    font-size: 1.2em;
+}
+
+/* Section titles */
+section h2 {
+  text-align: center;
+  color: #ff7a7a;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Lists */
+section ul {
+  list-style-type: disc;
+  padding-left: 40px;
+  margin-bottom: 20px;
+}
+
+/* Buttons in sections */
+section .btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #ff7a7a;
+  color: white;
+  padding: 12px 25px;
+  margin: 10px 0;
+  border-radius: 25px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+section .btn:hover {
+  background-color: #ff5252;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: #ff7a7a;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Highlighted note/emphasis */
+p em {
+  color: #ff5252;
+  font-style: italic;
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 15px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+}

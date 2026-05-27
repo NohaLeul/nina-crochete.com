@@ -1,0 +1,338 @@
+/* General */
+body {
+    background: linear-gradient(to right, #ff7a7a, #ffb347);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    text-align: center;
+    color: #333;
+}
+
+header {
+  background: linear-gradient(to right, #ff7a7a, #ffb347);
+  color: white;
+  text-align: center;
+  padding: 30px 10px;
+  font-family: 'Poppins', sans-serif;
+  margin-top: 10px ;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1px;}
+
+header p {
+    margin: 5px 0 0 0;
+    font-size: 1.2em;
+}
+
+/* Slideshow */
+#slideshow {
+    position: relative;
+    max-width: 120;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    overflow: hidden;
+    border-radius: 50px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    height: 650px;
+}
+
+
+
+.slide:hover {
+    transform: scale(1.05);
+    transition: transform 0.5s ease;
+    height: 650px;
+   
+}
+
+
+
+.slide.active {
+  opacity: 1;
+}
+
+
+
+/* caption */
+.caption {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 77, 166, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+/* dots */
+.dots {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background: white;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.dot.active {
+  opacity: 1;
+  background: #ff4da6;
+}
+
+/* Buttons/Links */
+#links {
+    margin: 40px 0;
+}
+
+#btn_disabled {
+    display: inline-block;
+    padding: 15px 35px;
+    margin: 10px;
+    background-color: #fae3d9;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    margin-bottom: 35px;
+    margin-top: 10px;
+}
+
+#btn_disabled:hover {
+    background-color: #ffb6b9;
+    color: #fff;
+    transform: translateY(-3px);
+}
+#btn_di {
+    display: inline-block;
+    padding: 15px 35px;
+    margin: 10px;
+    background-color: #fae3d9;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    margin-bottom: 35px;
+    margin-top: 10px;
+}
+
+#btn_di:hover {
+    background-color: #ffb6b9;
+    color: #fff;
+    transform: translateY(-3px);
+}
+#btn_dis {
+    display: inline-block;
+    padding: 15px 35px;
+    margin: 10px;
+    background-color: #fae3d9;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    margin-bottom: 35px;
+    margin-top: 10px;
+}
+
+#btn_dis:hover {
+    background-color: #ffb6b9;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+
+.btn2 {
+    display: inline-block;
+    padding: 15px 35px;
+    margin: 10px;
+    background-color: #fae3d9;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    margin-bottom: 25px;
+    margin-top: 15px;
+}
+
+
+.btn2:hover {
+    background-color: #ffb6b9;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: #ff7a7a;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1100px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 1.1em;
+    }
+
+    #slideshow {
+        max-width: 100%;
+       
+    }
+}
+.slide {
+  position: relative;
+  width: 100%;
+  opacity: 0;
+  transition: transform 0.5s easet;
+  display: none;
+}
+
+.slide.active {
+  opacity: 1;
+  position: relative;
+  display: block;
+}
+/* Container for about section */
+#about {
+  background-color: rgba(255, 255, 255, 0.9); /* light background over your crochet texture */
+  padding: 50px 20px;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.8;
+  max-width: 1270px;
+  margin: 50px auto;
+  margin-top: px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  text-align: left;
+}
+
+#about h2 {
+  text-align: left;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #ff7a7a;
+}
+#about h1 {
+  text-align: left;
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  color: darkorange;
+}
+.top-buttons{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+.top-buttons a{
+    text-decoration: none;
+    color: black;
+    background: none;
+    padding: 0;
+    border: none;
+    font-size: 14px;
+}
+
+.top-buttons a:hover{
+    text-decoration: underline;
+}
+.agreement-box{
+    margin-top: 15px;
+    font-size: 14px;
+    color: black;
+}
+
+.agreement-box a{
+    color: black;
+    text-decoration: none;
+}
+
+.agreement-box a:hover{
+    text-decoration: underline;
+}
+
+/* Disabled state */
+.disabled{
+    opacity: 0.4;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+/* SHAKE FIX (stronger + reliable) */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-6px); }
+    40% { transform: translateX(6px); }
+    60% { transform: translateX(-6px); }
+    80% { transform: translateX(6px); }
+    100% { transform: translateX(0); }
+}
+
+.shake{
+    animation: shake 0.35s ease !important;
+}
+
+/* CHECKBOX GLOW FIX */
+.agreement-box.glow{
+    box-shadow: 0 0 12px #ff4da6;
+    padding: 6px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+.btn, .btn2{
+    display: inline-block;
+    transform: translateX(0);
+}
+#aaa: hover{
+  text-decoration: blink;
+}
+.hide {
+    display: none;
+}
