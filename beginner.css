@@ -1,0 +1,123 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: #fff5f0;
+  color: #333;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(to right, #ff7a7a, #ffb347);
+  color: white;
+}
+
+header h1 {
+  font-size: 2.5rem;
+}
+
+#links {
+    margin: 40px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 5px 25px;
+    margin: 10px;
+    background-color: #fae3d9;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ffb6b9;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* Container */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  line-height: 1.7;
+  font-family: initial;
+  font-weight: initial;
+}
+
+/* Sections */
+.intro, .lesson {
+  background: white;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.lesson h2 {
+  color: #ff7a7a;
+}
+
+/* Video */
+.video {
+  margin-top: 15px;
+}
+
+.video iframe {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: white;
+}
+#links {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    margin: 10px;
+    background-color: #fae3d9;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #ffb6b9;
+    color: #fff;
+    transform: translateY(-3px);
+}
+.see-more-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color:  pink;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.see-more-btn:hover {
+  opacity: 0.9;
+}

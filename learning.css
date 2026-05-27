@@ -1,0 +1,105 @@
+/* Learning Page Styles */
+#learning-intro, #learning-levels {
+  padding: 50px 20px;
+  background-color: rgba(255, 245, 240, 0.9);
+  margin: 30px auto;
+  border-radius: 15px;
+  max-width: 900px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+#learning-intro h2, #learning-levels h2 {
+  text-align: center;
+  color: #ff7a7a;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+#learning-intro p  {
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+#learning-levels p   {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.learning-links {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.learning-links .btn {
+  display: inline-block;
+  margin: 10px 15px;
+  padding: 15px 35px;
+  background-color: #ff7a7a;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.learning-links .btn:hover {
+  background-color: #ff5252;
+  transform: scale(1.05);
+}
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+footer a {
+  color: #ff7a7a;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+header {
+  background: linear-gradient(to right, #ff7a7a, #ffb347);
+  color: white;
+  text-align: center;
+  padding: 30px 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;}
+
+header p {
+    margin: 5px 0 0 0;
+    font-size: 1.2em;
+}
+#links {
+    margin: 40px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    margin: 10px;
+    background-color: #fae3d9;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #ffb6b9;
+    color: #fff;
+    transform: translateY(-3px);
+}
