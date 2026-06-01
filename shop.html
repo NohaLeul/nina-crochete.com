@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nina Crochete Shop</title>
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+
+<header>
+  <h1>Nina Crochete Shop</h1>
+  <p>Choose, Filter, and Explore Our Handcrafted Crochet Products</p>
+  <nav>
+    <a href="index.html" class="btn">Home</a>
+    <a href="learning.html" class="btn">Lessons</a>
+    <a href="community.html" class="btn">Community</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Browse Our Products</h2>
+
+  <!-- Filters -->
+  <div class="filters">
+    <select id="typeFilter">
+      <option value="all">All Types</option>
+      <option value="corset">Corsets</option>
+      <option value="accessory">Accessories</option>
+      <option value="home">Home Décor</option>
+      <option value="special">Seasonal Specials</option>
+    </select>
+
+    <select id="priceFilter">
+      <option value="all">All Prices</option>
+      <option value="low">Under 500 ETB</option>
+      <option value="medium">500 - 1500 ETB</option>
+      <option value="high">Above 1500 ETB</option>
+    </select>
+  </div>
+
+  <!-- Main Row -->
+  <div class="main-row">
+
+    <!-- CORSETS -->
+    <div class="category-column">
+      <div class="product-card" data-type="corset" data-price="1200">
+        <img src="corset.jpg">
+        <div class="product-info">
+          <h3>Elegant Corset</h3>
+          <p>Handcrafted with precision</p>
+          <p class="price">1,200 ETB</p>
+        </div>
+      </div>
+
+      <!-- 9 extras -->
+      <div class="product-card extra" data-type="corset" data-price="1300"data-name="hat"><img src="culture.png"><p  class="price">1,300 ETB</p></div>
+      <div class="product-card extra" data-type="corset" data-price="1400"data-name="hat"><img src="corset3.jpg"><p class="price">1,400 ETB</p></div>
+      <div class="product-card extra" data-type="corset" data-price="1500"data-name="hat"><img src="corset4.jpg"><p class="price">1,500 ETB</p></div>
+      <div class="product-card extra" data-type="corset" data-price="1250"data-name="hat"><img src="corset5.jpg"><p class="price">1,250 ETB</p></div>
+      <div class="product-card extra" data-type="corset" data-price="1350"data-name="hat"><img src="corset6.jpg"><p class="price">1,350 ETB</p></div>
+      <div class="product-card extra" data-type="corset" data-price="1450"data-name="hat"><img src="corset7.jpg"><p class="price">1,450 ETB</p></div>
+      <div class="product-card extra" data-type="corset" data-price="1550"data-name="hat"><img src="corset8.jpg"><p class="price">1,550 ETB</p></div>
+      <div class="product-card extra" data-type="corset" data-price="1600"data-name="hat"><img src="corset9.jpg"><p class="price">1,600 ETB</p></div>
+      <div class="product-card extra" data-type="corset" data-price="1700"data-name="hat"><img src="corset10.jpg"><p class="price">1,700 ETB</p></div>
+    </div>
+
+    <!-- ACCESSORIES -->
+    <div class="category-column">
+      <div class="product-card" data-type="accessory" data-price="450">
+        <img src="hat.jpg">
+        <div class="product-info">
+          <h3>Stylish Hat</h3>
+          <p>Soft and comfortable</p>
+          <p class="price">450 ETB</p>
+        </div>
+      </div>
+
+      <!-- 9 extras -->
+      <div class="product-card extra" data-type="accessory" data-price="500" data-name="hat"><img src="hat2.jpg"><p class="price">500 ETB</p></div>
+      <div class="product-card extra" data-type="accessory" data-price="550" data-name="hat"><img src="hat3.jpg"><p class="price">550 ETB</p></div>
+      <div class="product-card extra" data-type="accessory" data-price="600" data-name="hat"><img src="hat4.jpg"><p class="price">600 ETB</p></div>
+      <div class="product-card extra" data-type="accessory" data-price="650" data-name="hat"><img src="hat5.jpg"><p class="price">650 ETB</p></div>
+      <div class="product-card extra" data-type="accessory" data-price="700" data-name="hat"><img src="hat6.jpg"><p class="price">700 ETB</p></div>
+      <div class="product-card extra" data-type="accessory" data-price="750" data-name="hat"><img src="hat7.jpg"><p class="price">750 ETB</p></div>
+      <div class="product-card extra" data-type="accessory" data-price="800" data-name="hat"><img src="hat8.jpg"><p class="price">800 ETB</p></div>
+      <div class="product-card extra" data-type="accessory" data-price="850" data-name="hat"><img src="hat9.jpg"><p class="price">850 ETB</p></div>
+      <div class="product-card extra" data-type="accessory" data-price="900" data-name="hat"><img src="hat10.jpg"><p class="price">900 ETB</p></div>
+    </div>
+
+    <!-- HOME -->
+    <div class="category-column">
+      <div class="product-card" data-type="home" data-price="900">
+        <img src="decore.jpg">
+        <div class="product-info">
+          <h3>Cozy Pillow</h3>
+          <p>Warm handmade décor</p>
+          <p class="price">900 ETB</p>
+        </div>
+      </div>
+
+      <!-- 9 extras -->
+      <div class="product-card extra" data-type="home" data-price="950" data-name="pillow"><img src="decor2.jpg"><p class="price">950 ETB</p></div>
+      <div class="product-card extra" data-type="home" data-price="1000" data-name="pillow"><img src="decor3.jpg"><p class="price">1,000 ETB</p></div>
+      <div class="product-card extra" data-type="home" data-price="1050" data-name="pillow"><img src="decor4.jpg"><p class="price">1,050 ETB</p></div>
+      <div class="product-card extra" data-type="home" data-price="1100" data-name="pillow"><img src="decor5.jpg"><p class="price">1,100 ETB</p></div>
+      <div class="product-card extra" data-type="home" data-price="1150" data-name="pillow"><img src="decor6.jpg"><p class="price">1,150 ETB</p></div>
+      <div class="product-card extra" data-type="home" data-price="1200" data-name="pillow"><img src="decor7.jpg"><p class="price">1,200 ETB</p></div>
+      <div class="product-card extra" data-type="home" data-price="1250" data-name="pillow"><img src="decor8.jpg"><p class="price">1,250 ETB</p></div>
+      <div class="product-card extra" data-type="home" data-price="1300" data-name="pillow"><img src="decor9.jpg"><p class="price">1,300 ETB</p></div>
+      <div class="product-card extra" data-type="home" data-price="1350" data-name="pillow"><img src="decor10.jpg"><p class="price">1,350 ETB</p></div>
+    </div>
+
+    <!-- SPECIAL -->
+    <div class="category-column">
+      <div class="product-card" data-type="special" data-price="1600">
+        <img src="scarf.jpg">
+        <div class="product-info">
+          <h3>Seasonal Scarf</h3>
+          <p>Limited edition</p>
+          <p class="price">1,600 ETB</p>
+        </div>
+      </div>
+
+      <!-- 9 extras -->
+      <div id="product-card" class="product-card extra" data-type="special" data-price="1700" data-name="corset"><img src="scarf2.jpg"><p class="price">1,700 ETB</p></div>
+      <div id="product-card" class="product-card extra" data-type="special" data-price="1750" data-name="corset"><img src="scarf3.jpg"><p class="price">1,750 ETB</p></div>
+      <div id="product-card" class="product-card extra" data-type="special" data-price="1800" data-name="corset"><img src="scarf4.jpg"><p class="price">1,800 ETB</p></div>
+      <div id="product-card" class="product-card extra" data-type="special" data-price="1850" data-name="corset"><img src="scarf5.jpg"><p class="price">1,850 ETB</p></div>
+      <div id="product-card" class="product-card extra" data-type="special" data-price="1900" data-name="corset"><img src="scarf6.jpg"><p class="price">1,900 ETB</p></div>
+      <div id="product-card" class="product-card extra" data-type="special" data-price="1950" data-name="corset"><img src="scarf7.jpg"><p class="price">1,950 ETB</p></div>
+      <div id="product-card" class="product-card extra" data-type="special" data-price="2000" data-name="corset"><img src="scarf8.jpg"><p class="price">2,000 ETB</p></div>
+      <div id="product-card" class="product-card extra" data-type="special" data-price="2100" data-name="corset"><img src="scarf9.jpg"><p class="price">2,100 ETB</p></div>
+      <div id="product-card" class="product-card extra" data-type="special" data-price="2200" data-name="corset"><img src="scarf10.jpg"><p class="price">2,200 ETB</p></div>
+    </div>
+
+  </div>
+
+  <!-- SEE MORE -->
+  <div class="see-more-container">
+    <button id="toggleSeeBtn">See More</button>
+  </div>
+
+</div>
+<div class="cart-panel" id="cartPanel">
+
+  <h3 id="hh">Your Cart</h3>
+
+  <div id="cartItems"></div>
+
+  <div class="cart-total">
+    Total: <span id="cartTotal">0</span> ETB
+  </div>
+
+  <input
+    type="tel"
+    id="phoneNumber"
+    placeholder="Enter your phone number"
+  >
+
+ 
+<div class="send-options">
+  
+  <a href="mailto:nohaleul27@gmail.com" class="btn btn--contact">send order</a>
+  
+</div>
+
+<footer>
+  <p>&copy; 2026 Nina Crochete. All rights reserved.</p>
+  <p>Contact: ninacrochete@gmail.com</p>
+</footer>
+
+<script src="script2.js"></script>
+</body>
+</html>
