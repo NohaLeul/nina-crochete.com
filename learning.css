@@ -1,3 +1,9 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
 /* Learning Page Styles */
 #learning-intro, #learning-levels {
   padding: 50px 20px;
@@ -70,6 +76,7 @@ header {
   text-align: center;
   padding: 30px 10px;
   font-family: 'Poppins', sans-serif;
+
 }
 
 header h1 {
