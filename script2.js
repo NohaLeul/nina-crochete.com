@@ -194,3 +194,21 @@ document.querySelectorAll('.product-card').forEach(card => {
     });
 
 });
+document.getElementById("sendOrderBtn").addEventListener("click", () => {
+
+    const phone = document.getElementById("phoneNumber").value;
+
+    let orderText = `Phone: ${phone}\n\nOrders:\n`;
+
+    cart.forEach(item => {
+        orderText += `${item.name} - ${item.price} ETB\n`;
+    });
+
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+    orderText += `\nTotal: ${total} ETB`;
+
+    window.location.href =
+        `mailto:ninacrochete@gmail.com?subject=Nina Crochete Order&body=${encodeURIComponent(orderText)}`;
+
+});
