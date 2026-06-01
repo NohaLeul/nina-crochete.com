@@ -1,3 +1,8 @@
+
+/* =========================
+   FILTER SYSTEM (FIXED SAFE)
+========================= */
+
 const typeFilter = document.getElementById('typeFilter');
 const priceFilter = document.getElementById('priceFilter');
 
@@ -5,140 +10,187 @@ typeFilter.addEventListener('change', filterProducts);
 priceFilter.addEventListener('change', filterProducts);
 
 function filterProducts() {
+
   const typeValue = typeFilter.value;
   const priceValue = priceFilter.value;
 
-  const columns = document.querySelectorAll('.category-column');
+  const cards = document.querySelectorAll('.product-card');
 
-  columns.forEach(column => {
-    let anyVisible = false;
+  cards.forEach(card => {
 
-    const cards = column.querySelectorAll('.product-card');
+    const type = card.getAttribute('data-type');
+    const price = parseInt(card.getAttribute('data-price'));
 
-    cards.forEach(card => {
-      const cardType = card.getAttribute('data-type');
-      const cardPrice = parseInt(card.getAttribute('data-price'), 10);
+    let typeMatch = (typeValue === 'all' || typeValue === type);
 
-      let typeMatch = typeValue === 'all' || typeValue === cardType;
-      let priceMatch = true;
+    let priceMatch = true;
+    if (priceValue === 'low') priceMatch = price < 500;
+    else if (priceValue === 'medium') priceMatch = price >= 500 && price <= 1500;
+    else if (priceValue === 'high') priceMatch = price > 1500;
 
-      if (priceValue === 'low') priceMatch = cardPrice < 500;
-      else if (priceValue === 'medium') priceMatch = cardPrice >= 500 && cardPrice <= 1500;
-      else if (priceValue === 'high') priceMatch = cardPrice > 1500;
+    if (typeMatch && priceMatch) {
+      card.dataset.filtered = "true";
+    } else {
+      card.dataset.filtered = "false";
+    }
 
-      if (typeMatch && priceMatch) {
-        card.style.display = 'block';
-        anyVisible = true;
-      } else {
-        card.style.display = 'none';
-      }
-    });
-
-    column.style.display = anyVisible ? 'flex' : 'none';
+    applyVisibility(card);
   });
 }
 
+
 /* =========================
-   SEE MORE FIX (ONLY ONE BLOCK)
+   SEE MORE / SEE LESS (FIXED)
 ========================= */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const columns = document.querySelectorAll('.category-column');
-  const toggleBtn = document.getElementById('toggleSeeBtn');
+    const columns = document.querySelectorAll('.category-column');
+    const toggleBtn = document.getElementById('toggleSeeBtn');
 
-  if (!toggleBtn) return;
+    if (!toggleBtn) return;
 
-  // initially hide extras
-  columns.forEach(column => {
-    const cards = column.querySelectorAll('.product-card');
-    cards.forEach((card, index) => {
-      if (index > 0) card.style.display = 'none';
-    });
-  });
-
-  toggleBtn.addEventListener('click', () => {
-
-    const isShowingLess = toggleBtn.textContent === 'See Less';
-
-    columns.forEach(column => {
-      const cards = column.querySelectorAll('.product-card');
-
-      cards.forEach((card, index) => {
-        if (index > 0) {
-          card.style.display = isShowingLess ? 'none' : 'block';
-        }
-      });
+    // Start with extras hidden
+    document.querySelectorAll('.extra').forEach(card => {
+        card.style.display = 'none';
     });
 
-    toggleBtn.textContent = isShowingLess ? 'See More' : 'See Less';
-  });
+    toggleBtn.textContent = 'See More';
+
+    toggleBtn.addEventListener('click', () => {
+
+        const expanded = toggleBtn.textContent === 'See Less';
+
+        document.querySelectorAll('.extra').forEach(card => {
+            card.style.display = '';
+        });
+
+        toggleBtn.textContent = expanded ? 'See More' : 'See Less';
+
+    });
 
 });
 
+
 /* =========================
-   CART SYSTEM
+   VISIBILITY ENGINE (CORE FIX)
+========================= */
+
+function applyVisibility(card) {
+
+  const filtered = card.dataset.filtered !== "false";
+  const expanded = card.classList.contains('extra')
+    ? card.dataset.expanded === "true"
+    : true;
+
+  if (filtered && expanded !== false) {
+    card.style.display = "block";
+  } else {
+    card.style.display = "none";
+  }
+}
+
+
+/* =========================
+   ADD TO CART SYSTEM (FIXED)
 ========================= */
 
 const cartItemsContainer = document.getElementById('cartItems');
 const cartTotal = document.getElementById('cartTotal');
-const sendOrderBtn = document.getElementById('sendOrderBtn');
 
 let cart = [];
 
-document.querySelectorAll('.product-card').forEach(card => {
-  card.addEventListener('click', () => {
+/* ADD BUTTON SUPPORT (NEW SAFE WAY) */
+function addToCart(name, price) {
+  cart.push({ name, price });
+  updateCart();
+  const sidebar = document.getElementById("cartSidebar");
 
-    const name = card.getAttribute('data-name') || 'Product';
-    const price = parseInt(card.getAttribute('data-price'));
+if (!sidebar.classList.contains("open")) {
+    toggleCart();
+}
+}
 
-    if (!price) return;
 
-    cart.push({ name, price });
-    updateCart();
+/* =========================
+   VIEW IMAGE (NEW)
+========================= */
 
-  });
-});
+function viewImage(src){
+  window.open(src, "_blank");
+}
 
-function updateCart() {
+
+/* =========================
+   CART UI UPDATE
+========================= */
+
+function updateCart(){
+
   if (!cartItemsContainer) return;
 
-  cartItemsContainer.innerHTML = '';
+  cartItemsContainer.innerHTML = "";
+
   let total = 0;
 
-  cart.forEach(item => {
+  cart.forEach((item, index) => {
     total += item.price;
 
-    const div = document.createElement('div');
-    div.classList.add('cart-item');
-    div.innerHTML = `
-      <span>${item.name}</span>
-      <span>${item.price} ETB</span>
-    `;
+    const div = document.createElement("div");
+    div.classList.add("cart-item");
 
+    
+div.innerHTML = `
+  <span>${item.name}</span>
+  <span>${item.price} ETB</span>
+  <button class="remove-item" onclick="removeFromCart(${index})">✖</button>
+`;
     cartItemsContainer.appendChild(div);
   });
 
   if (cartTotal) cartTotal.textContent = total;
 }
-
-/* =========================
-   ORDER TEXT
-========================= */
-
-function getOrderText() {
-  const phone = document.getElementById('phoneNumber')?.value || '';
-
-  let list = '';
-  cart.forEach(i => {
-    list += `${i.name} - ${i.price} ETB\n`;
-  });
-
-  const total = cart.reduce((sum, i) => sum + i.price, 0);
-
-  return `Phone: ${phone}
-
-Orders:
-${list}
-Total: ${total} ETB`;
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
 }
+/* ================= CART SIDEBAR TOGGLE ================= */
+
+
+function toggleCart() {
+  const sidebar = document.getElementById("cartSidebar");
+  const btn = document.querySelector(".cart-open-btn");
+
+  sidebar.classList.toggle("open");
+
+  if (sidebar.classList.contains("open")) {
+    btn.textContent = "✖ Hide Cart";
+  } else {
+    btn.textContent = " Cart";
+  }
+}
+document.querySelectorAll('.product-card').forEach(card => {
+
+    card.addEventListener('click', function(e){
+
+        // Don't reopen when clicking the buttons themselves
+        if (
+            e.target.classList.contains('add-cart-btn') ||
+            e.target.classList.contains('view-image-btn')
+        ) {
+            return;
+        }
+
+        // Close all other cards
+        document.querySelectorAll('.product-card').forEach(c => {
+            if(c !== this){
+                c.classList.remove('active');
+            }
+        });
+
+        // Open/close this card
+        this.classList.toggle('active');
+
+    });
+
+});
