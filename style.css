@@ -1,0 +1,275 @@
+/* =========================
+   GENERAL
+========================= */
+
+body {
+    background: linear-gradient(to right, #ff7a7a, #ffb347);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    text-align: center;
+    color: #333;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: linear-gradient(to right, #ff7a7a, #ffb347);
+    color: white;
+    text-align: center;
+
+    padding: 30px 10px;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    position: relative;
+    z-index: 2;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1px;
+}
+
+header p {
+    margin: 5px 0 0 0;
+    font-size: 1.2em;
+}
+
+/* =========================
+   TOP BUTTONS
+========================= */
+
+.top-buttons{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    gap: 12px;
+    z-index: 2;
+}
+
+.top-buttons a{
+    text-decoration: none;
+    color: black;
+    background: none;
+    padding: 0;
+    border: none;
+    font-size: 14px;
+}
+
+.top-buttons a:hover{
+    text-decoration: underline;
+}
+
+/* =========================
+   AGREEMENT BOX
+========================= */
+
+.agreement-box{
+    margin-top: 15px;
+    font-size: 14px;
+    color: black;
+    z-index: 2;
+    position: relative;
+}
+
+.agreement-box a{
+    color: black;
+    text-decoration: none;
+}
+
+.agreement-box a:hover{
+    text-decoration: underline;
+}
+
+/* checkbox glow */
+.agreement-box.glow{
+    box-shadow: 0 0 12px #ff4da6;
+    padding: 6px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+/* =========================
+   DISABLED BUTTONS
+========================= */
+
+.disabled{
+    opacity: 0.4;
+    pointer-events: none;
+    cursor: not-allowed;
+}
+
+/* =========================
+   SHAKE ANIMATION
+========================= */
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-6px); }
+    40% { transform: translateX(6px); }
+    60% { transform: translateX(-6px); }
+    80% { transform: translateX(6px); }
+    100% { transform: translateX(0); }
+}
+
+.shake{
+    animation: shake 0.35s ease !important;
+}
+
+/* buttons must allow animation */
+.btn, .btn2{
+    display: inline-block;
+    transform: translateX(0);
+}
+
+/* =========================
+   HERO BACKGROUND SLIDESHOW
+========================= */
+
+#slideshow{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+/* dark overlay for readability */
+#slideshow::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    pointer-events: none;
+}
+
+/* slides */
+.slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: block;
+    transition: opacity 1s ease;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* active slide */
+.slide.active{
+    opacity: 1;
+}
+
+/* =========================
+   ABOUT SECTION (FIRST CONTENT)
+========================= */
+
+#about{
+    margin-top: 10vh;
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255,255,255,0.95);
+    padding: 50px 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.8;
+    max-width: 1270px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    text-align: left;
+}
+
+#about h1{
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+    color: darkorange;
+}
+
+#about h2{
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: #ff7a7a;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+#btn_disabled,
+#btn_di,
+#btn_dis,
+.btn2{
+    display: inline-block;
+    padding: 15px 35px;
+    margin: 10px;
+    background-color: #fae3d9;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+#btn_disabled:hover,
+#btn_di:hover,
+#btn_dis:hover,
+.btn2:hover{
+    background-color: #ffb6b9;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: #ff7a7a;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media screen and (max-width: 1100px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .btn {
+        padding: 12px 25px;
+        font-size: 1.1em;
+    }
+}
+.container{
+    margin-bottom: ;
+}
