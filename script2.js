@@ -212,3 +212,29 @@ document.getElementById("sendOrderBtn").addEventListener("click", () => {
         `mailto:ninacrochete@gmail.com?subject=Nina Crochete Order&body=${encodeURIComponent(orderText)}`;
 
 });
+let extrasVisible = false;
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const toggleBtn = document.getElementById('toggleSeeBtn');
+
+    document.querySelectorAll('.extra').forEach(card => {
+        card.style.display = 'none';
+    });
+
+    toggleBtn.textContent = 'See More';
+
+    toggleBtn.addEventListener('click', () => {
+
+        extrasVisible = !extrasVisible;
+
+        document.querySelectorAll('.extra').forEach(card => {
+            card.style.display = extrasVisible ? 'block' : 'none';
+        });
+
+        toggleBtn.textContent = extrasVisible
+            ? 'See Less'
+            : 'See More';
+    });
+
+});
