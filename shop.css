@@ -344,25 +344,24 @@ margin-left: 5px;
 }
 
 /* MOBILE RESPONSIVE */
-@media (max-width: 768px) {
+@media (max-width: 768px){
 
-  .cart-panel {
-    width: 90%;
-    left: 5%;
-    bottom: 10px;
-  }
+    .main-row{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
 
-  .main-row {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .product-card{
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+
+    .product-card img{
+        height: 140px;
+    }
 
 }
-
-@media (max-width: 500px) {
-
-  .main-row {
-    grid-template-columns: 1fr;
-  }
 
 }
 .product-card {
