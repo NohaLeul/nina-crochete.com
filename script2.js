@@ -194,47 +194,30 @@ document.querySelectorAll('.product-card').forEach(card => {
     });
 
 });
-document.getElementById("sendOrderBtn").addEventListener("click", () => {
+const sendOrderBtn = document.getElementById("sendOrderBtn");
 
-    const phone = document.getElementById("phoneNumber").value;
+if(sendOrderBtn){
 
-    let orderText = `Phone: ${phone}\n\nOrders:\n`;
+    sendOrderBtn.addEventListener("click", function(){
 
-    cart.forEach(item => {
-        orderText += `${item.name} - ${item.price} ETB\n`;
-    });
+        const phone = document.getElementById("phoneNumber")?.value || "Not provided";
 
-    const total = cart.reduce((sum, item) => sum + item.price, 0);
+        let orderText = `Phone Number: ${phone}\n\nOrders:\n\n`;
 
-    orderText += `\nTotal: ${total} ETB`;
-
-    window.location.href =
-        `mailto:ninacrochete@gmail.com?subject=Nina Crochete Order&body=${encodeURIComponent(orderText)}`;
-
-});
-let extrasVisible = false;
-
-document.addEventListener('DOMContentLoaded', () => {
-
-    const toggleBtn = document.getElementById('toggleSeeBtn');
-
-    document.querySelectorAll('.extra').forEach(card => {
-        card.style.display = 'none';
-    });
-
-    toggleBtn.textContent = 'See More';
-
-    toggleBtn.addEventListener('click', () => {
-
-        extrasVisible = !extrasVisible;
-
-        document.querySelectorAll('.extra').forEach(card => {
-            card.style.display = extrasVisible ? 'block' : 'none';
+        cart.forEach(item => {
+            orderText += `${item.name} - ${item.price} ETB\n`;
         });
 
-        toggleBtn.textContent = extrasVisible
-            ? 'See Less'
-            : 'See More';
+        const total =
+            cart.reduce((sum,item) => sum + item.price, 0);
+
+        orderText += `\nTotal: ${total} ETB`;
+
+        window.open(
+            `https://mail.google.com/mail/?view=cm&fs=1&to=nohaleul27@gmail.com&su=New Order&body=${encodeURIComponent(orderText)}`,
+            "_blank"
+        );
+
     });
 
-});
+}
