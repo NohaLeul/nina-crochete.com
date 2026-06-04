@@ -347,12 +347,7 @@ margin-left: 5px;
 @media (max-width: 768px){
 
    
-.main-row{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 20px;
-}
-    }
+  }
 
 .product-card{
     width: 100%;
@@ -406,20 +401,12 @@ margin-left: 5px;
   }
 
 
-.main-row{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 20px;
-}
+
 }
 
 @media (max-width: 500px) {
 
-  .main-row{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 20px;
-}
+
 }
 .product-card{
     
